@@ -9,9 +9,11 @@
         tools:context=".ui.view.splash.SplashActivity">
 
 
-    <ImageView android:layout_width="100dp"
-               android:layout_height="100dp"
+    <ImageView android:layout_width="130dp"
+               android:layout_height="130dp"
                android:id="@+id/splash_icon"
+               android:elevation="8dp"
+               android:src="@drawable/coinbase_icon_icon"
                app:layout_constraintTop_toTopOf="parent"
                app:layout_constraintLeft_toLeftOf="parent"
                app:layout_constraintRight_toRightOf="parent"
