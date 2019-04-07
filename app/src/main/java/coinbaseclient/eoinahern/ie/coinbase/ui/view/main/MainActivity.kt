@@ -11,18 +11,17 @@ import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
 
+    @Inject
+    lateinit var sharedPrefs: SharedPreferences
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         inject()
-
     }
 
     private fun inject() {
-        val comp = (application as CoinbaseApp).getAppComponent()
-        if(comp != null) {
-            println("hello")
-        }
+        (application as CoinbaseApp).getAppComponent().plus().inject(this)
     }
 
     companion object {

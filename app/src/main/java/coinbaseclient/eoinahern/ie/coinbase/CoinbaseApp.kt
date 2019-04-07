@@ -1,7 +1,6 @@
 package coinbaseclient.eoinahern.ie.coinbase
 
 import android.app.Application
-import androidx.appcompat.app.AppCompatActivity
 import coinbaseclient.eoinahern.ie.coinbase.di.AppComponent
 import coinbaseclient.eoinahern.ie.coinbase.di.AppModule
 import coinbaseclient.eoinahern.ie.coinbase.di.DaggerAppComponent
@@ -12,15 +11,14 @@ class CoinbaseApp : Application() {
 
     override fun onCreate() {
         super.onCreate()
+        createComponent()
     }
 
     private fun createComponent() {
         daggerComponent = DaggerAppComponent.builder().appModule(AppModule(this)).build()
     }
 
-    fun getAppComponent(): AppComponent{
+    fun getAppComponent(): AppComponent {
         return daggerComponent
     }
-
-
 }
