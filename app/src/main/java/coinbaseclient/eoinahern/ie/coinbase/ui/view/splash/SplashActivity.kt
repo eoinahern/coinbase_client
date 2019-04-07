@@ -33,12 +33,14 @@ class SplashActivity : AppCompatActivity() {
 
             override fun onAnimationEnd(animation: Animation?) {
                 navigateNext()
+                finish()
             }
         })
     }
 
     private fun executeAnimation() {
         uiScope.launch {
+            delay(300)
             iconImView.startAnimation(animation)
         }
     }
